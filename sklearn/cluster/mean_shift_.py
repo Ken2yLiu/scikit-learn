@@ -101,6 +101,8 @@ def _mean_shift_single_seed(my_mean, X, nbrs, max_iter):
         # If converged or at max_iter, adds the cluster
         if (np.linalg.norm(my_mean - my_old_mean) < stop_thresh or
                 completed_iterations == max_iter):
+            #Ken2yLiu# print iterations
+            print "MeanShift iteration num: {}".format(completed_iterations)
             return tuple(my_mean), len(points_within)
         completed_iterations += 1
 
